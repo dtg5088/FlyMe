@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">    
+    <title>Fly Me</title>
+    
+    <!-- Bootstrap  CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Moment.js Reference -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="assets/style.css">
+
+    </head>
+
+    <body>
+
+    <!-- flight Tracker -->
+    <div class="container">
+
+        <!-- Jumbotron -->
+        <div class="jumbotron" style="background-color: black; color: white">
+        <h1 class="text-center">Flight Tracker System</h1>
+        <h3 class="text-center">Track the available flights</h3>
+        <h5 class="text-center">Registration system for students that want to sign up to obtain thier privie piol</h5>
+        </div>
+
+        <div class="row">
+
+        <div class="col-md-12">
+
+            <!-- Current Employees-->
+            <div class="card mb-4">
+            <div class="card-header">Current Flights</div>
+            <div class="card-body">
+                <table class="table table-sm table-hover" id='flight-table'>  <!-- id= employee-table-->
+                <thead>
+                    <tr>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Plane Name</th>
+                    <th scope="col">Takeoff Time</th>
+                    <th scope="col">Land Time</th>
+                    <th scope="col">Fuel Time</th>
+                    <th scope="col">Next Trip Time</th>
+                    <th scope="col">Leaves in</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-md-12">
+            <!-- Add Flight -->
+            <div class="card mb-4">
+            <div class="card-header">Add Flight</div>
+            <div class="card-body">
+
+                <!-- Entry Form -->
+                <form>
+
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label for="student-input">Student Name</label>
+                            <input class="form-control" id="student-input" placeholder="Terell Smith" type="text"> <!--  id="rate-input" -->
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row ">
+                            <div class="col-md-5">
+                                <label for="plane-name-input">Plane Name</label>
+                                <input class="form-control" id="plane-name-input" placeholder="Blue Thunder" type="text">
+                            </div>
+                            
+                            <div class="col-md-3">
+                                <label for="takeOff-input">Take off time</label>
+                                <input class="form-control" id="takeOff-input" placeholder="3:00pm" type="text" >
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <div class="row"> 
+                            <div class="col-md-6 form-group">
+                                <label for="land-input">Land Time</label>
+                                <input class="form-control" id="land-input" placeholder="3:00pm" type="text"> <!--  id="start-input" -->
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="fuel-input">Fuel Time (mins)</label>
+                                <input class="form-control" id="fuel-input" placeholder="30" type="text"> <!--  id="rate-input" -->
+                            </div>
+                        </div>
+                    
+                        <button class="btn btn-primary float-left" id="add-flight-btn">Submit</button> <!--  id="add-employee-btn" -->
+                    
+                </form>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/script.js"></script>
+
+    </body>
+
+    </html>
+
+
+
+
+    <!--attempting to use dropdown -->
+    <!--<div class="form-group">
+                    <div class="row ">
+                        <div class="col-md-5 ">
+                                <label for="airline-name-input">Airline Name</label>
+                                <div class="input-group">
+                                <input class="form-control" id="airline-name-input" placeholder="(ex:) Southwest" type="text" aria-label="Text input with dropdown button">
+                                    <div class="input-group-append">
+                                      <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                      <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <div role="separator" class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Separated link</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                    <div class="col-md-3 ">
+                        <label for="depart-input">Departure location</label>
+                            <div class="input-group">
+                                <input class="form-control" id="depart-input" placeholder="(IAD) Dulles International" type="text" aria-label="Text input with dropdown button">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" >Action</a>
+                                            <a class="dropdown-item" >Action</a>
+                                            <a class="dropdown-item" >Action</a>
+                                            <a class="dropdown-item" >Action</a>
+                                            <a class="dropdown-item" >Action</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                    <div class="col-md-3 ">
+                            <label for="arrival-input">Arrival Location</label>
+                                <div class="input-group">
+                                    <input class="form-control" id="arrival-input" placeholder="(LAX) Los Angeles International" type="text" aria-label="Text input with dropdown button">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#">Action</a>
+                                                <a class="dropdown-item" href="#">Another action</a>
+                                                <a class="dropdown-item" href="#">Something else here</a>
+                                                <div role="separator" class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="#">Separated link</a>
+                                            </div>
+                                        </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>-->

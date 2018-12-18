@@ -1,0 +1,9 @@
+
+.dropdown-menu{
+    display: none;
+}
+
+#flight-table th, td {
+      display: inline-block;
+      width: 13.575%;
+    }
